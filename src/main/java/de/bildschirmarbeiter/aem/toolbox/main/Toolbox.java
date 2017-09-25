@@ -1,5 +1,6 @@
 package de.bildschirmarbeiter.aem.toolbox.main;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class Toolbox extends OsgiApplication {
             throw new RuntimeException(e);
         }
         final Map<String, String> configuration = new HashMap<>();
+        configuration.put("org.osgi.framework.storage", storage());
         configuration.put("org.osgi.framework.system.packages.extra", String.join(",", packages));
         return configuration;
     }
@@ -37,6 +39,16 @@ public class Toolbox extends OsgiApplication {
             throw new RuntimeException(e);
         }
         return bundles;
+    }
+
+    private String storage() {
+        return System.getProperty("user.home")
+            .concat(File.separator)
+            .concat(".bildschirmarbeiter")
+            .concat(File.separator)
+            .concat("aem-toolbox")
+            .concat(File.separator)
+            .concat("storage");
     }
 
 }
