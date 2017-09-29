@@ -27,7 +27,7 @@
 
   <properties>
     <nativeReleaseVersion>0.0.1</nativeReleaseVersion>
-    <de.bildschirmarbeiter.application.osgi.version>0.0.1</de.bildschirmarbeiter.application.osgi.version>
+    <de.bildschirmarbeiter.application.osgi.version>0.0.2</de.bildschirmarbeiter.application.osgi.version>
     <org.apache.felix.framework.version>5.6.8</org.apache.felix.framework.version>
   </properties>
 
