@@ -12,6 +12,12 @@ import de.bildschirmarbeiter.application.osgi.OsgiApplication;
 
 public class Toolbox extends OsgiApplication {
 
+    private static final String APPLICATION_GROUP = "bildschirmarbeiter";
+
+    private static final String APPLICATION_NAME = "aem-toolbox";
+
+    private static final String APPLICATION_VERSION = "0.0";
+
     public static void main(String[] args) throws Exception {
         launch(args);
     }
@@ -44,9 +50,11 @@ public class Toolbox extends OsgiApplication {
     private String storage() {
         return System.getProperty("user.home")
             .concat(File.separator)
-            .concat(".bildschirmarbeiter")
+            .concat(".").concat(APPLICATION_GROUP)
             .concat(File.separator)
-            .concat("aem-toolbox")
+            .concat(APPLICATION_NAME)
+            .concat(File.separator)
+            .concat(APPLICATION_VERSION)
             .concat(File.separator)
             .concat("storage");
     }
