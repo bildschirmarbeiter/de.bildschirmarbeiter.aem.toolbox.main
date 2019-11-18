@@ -29,7 +29,7 @@
   <properties>
     <nativeReleaseVersion>0.0.1</nativeReleaseVersion>
     <de.bildschirmarbeiter.application.osgi.version>0.0.2</de.bildschirmarbeiter.application.osgi.version>
-    <org.apache.felix.framework.version>5.6.8</org.apache.felix.framework.version>
+    <org.apache.felix.framework.version>6.0.3</org.apache.felix.framework.version>
   </properties>
 
   <build>
@@ -98,28 +98,45 @@
     <dependency>
       <groupId>de.bildschirmarbeiter.aem.toolbox</groupId>
       <artifactId>de.bildschirmarbeiter.aem.toolbox.application</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3-SNAPSHOT</version>
+    </dependency>
+    <!-- OSGi -->
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.util.function</artifactId>
+      <version>1.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.util.promise</artifactId>
+      <version>1.1.1</version>
     </dependency>
     <!-- Apache Felix -->
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.apache.felix.configadmin</artifactId>
-      <version>1.8.16</version>
+      <version>1.9.16</version>
     </dependency>
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.apache.felix.framework</artifactId>
       <version>${org.apache.felix.framework.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>animal-sniffer-annotations</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.apache.felix.metatype</artifactId>
-      <version>1.1.4</version>
+      <version>1.2.2</version>
     </dependency>
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.apache.felix.scr</artifactId>
-      <version>2.0.12</version>
+      <version>2.1.16</version>
       <exclusions>
         <exclusion>
           <groupId>org.codehaus.mojo</groupId>
@@ -131,12 +148,12 @@
     <dependency>
       <groupId>org.ops4j.pax.logging</groupId>
       <artifactId>pax-logging-api</artifactId>
-      <version>1.10.1</version>
+      <version>1.11.3</version>
     </dependency>
     <dependency>
       <groupId>org.ops4j.pax.logging</groupId>
       <artifactId>pax-logging-service</artifactId>
-      <version>1.10.1</version>
+      <version>1.11.3</version>
     </dependency>
   </dependencies>
 
